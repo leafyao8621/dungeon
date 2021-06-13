@@ -1,9 +1,8 @@
-#include "model/model.h"
+#include "controller/controller.h"
 
 int main(void) {
-    // model_new();
-    // model_save(0);
-    model_load(0);
-    model_log(stdout);
+    controller_initialize();
+    for (; !controller_handle(););
+    controller_finalize();
     return 0;
 }
